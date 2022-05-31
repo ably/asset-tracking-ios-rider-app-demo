@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9tG-JK-rHc">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setup View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="SetupViewController" customModule="Rider_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ably Publisher Setup" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czT-Mg-c8w" userLabel="Title Label">
+                                <rect key="frame" x="100" y="100" width="214.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the trackable id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRX-XB-dPt" userLabel="Enter Trackable ID Label">
+                                <rect key="frame" x="20" y="177" width="167" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8B7-i8-Lvk" userLabel="Trackable ID Text Field">
+                                <rect key="frame" x="20" y="210" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select desired resolution:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ins-Uy-yOp" userLabel="Select Resolution Label">
+                                <rect key="frame" x="20" y="280" width="193" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRD-G3-8em" userLabel="Start Tracking Button">
+                                <rect key="frame" x="124" y="380" width="166" height="48"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="REI-A4-XF6"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Start Tracking">
+                                    <color key="baseForegroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="startTrackingButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="N8e-Vq-jrK"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4m6-4L-CP6" userLabel="Select Resolution Segmented Control">
+                                <rect key="frame" x="83" y="313" width="248" height="32"/>
+                                <segments>
+                                    <segment title="Low"/>
+                                    <segment title="Medium"/>
+                                    <segment title="High"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ins-Uy-yOp" firstAttribute="top" secondItem="8B7-i8-Lvk" secondAttribute="bottom" constant="36" id="0Id-zw-MiD"/>
+                            <constraint firstItem="8B7-i8-Lvk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6mx-UO-5N4"/>
+                            <constraint firstItem="4m6-4L-CP6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7FD-6h-xtg"/>
+                            <constraint firstItem="JRD-G3-8em" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Oe-x5-Kjr"/>
+                            <constraint firstItem="GRX-XB-dPt" firstAttribute="top" secondItem="czT-Mg-c8w" secondAttribute="bottom" constant="48" id="B3V-Gg-f7k"/>
+                            <constraint firstItem="8B7-i8-Lvk" firstAttribute="top" secondItem="GRX-XB-dPt" secondAttribute="bottom" constant="12" id="E3K-KI-2mr"/>
+                            <constraint firstItem="JRD-G3-8em" firstAttribute="top" secondItem="4m6-4L-CP6" secondAttribute="bottom" constant="36" id="JWd-QI-Mdy"/>
+                            <constraint firstItem="4m6-4L-CP6" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.6" id="PRd-4L-JQ3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GRX-XB-dPt" secondAttribute="trailing" constant="20" id="ZRX-H9-dPT"/>
+                            <constraint firstItem="czT-Mg-c8w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="apR-Zo-6a9"/>
+                            <constraint firstItem="JRD-G3-8em" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="bOR-Eq-wqJ"/>
+                            <constraint firstItem="4m6-4L-CP6" firstAttribute="top" secondItem="Ins-Uy-yOp" secondAttribute="bottom" constant="12" id="eN2-uL-bWZ"/>
+                            <constraint firstItem="Ins-Uy-yOp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eUS-eX-PEA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8B7-i8-Lvk" secondAttribute="trailing" constant="20" id="gbl-TL-LDz"/>
+                            <constraint firstItem="czT-Mg-c8w" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gfw-5R-B0d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ins-Uy-yOp" secondAttribute="trailing" constant="20" id="plN-fW-3d0"/>
+                            <constraint firstItem="GRX-XB-dPt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rnV-R7-nHH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yi6-cz-6Ij"/>
+                    <connections>
+                        <outlet property="selectResolutionSegmentedControl" destination="4m6-4L-CP6" id="8PL-MB-Rf2"/>
+                        <outlet property="startTrackingButton" destination="JRD-G3-8em" id="ofV-Ar-Zho"/>
+                        <outlet property="trackableIDTextField" destination="8B7-i8-Lvk" id="qeD-1C-zHg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="109.82142857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="60O-vf-iCv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9tG-JK-rHc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KTM-sv-D9F">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PDc-ya-wcD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fjD-vO-M6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="109.82142857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
