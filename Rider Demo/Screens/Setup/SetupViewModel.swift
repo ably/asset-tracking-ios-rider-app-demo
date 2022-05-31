@@ -8,5 +8,4 @@
 import Foundation
 
 class SetupViewModel: NSObject {
-    weak var viewController: SetupViewController?
 }

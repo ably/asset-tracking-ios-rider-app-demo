@@ -9,7 +9,17 @@ import Foundation
 import CoreLocation
 
 class PublisherStatusViewModel {
-    var locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
+    
+    let publisherResolution: PublisherResolution
+    let trackingID: String
+    
+    let aatService = AATService()
+    
+    init(publisherResolution: PublisherResolution, trackingID: String) {
+        self.publisherResolution = publisherResolution
+        self.trackingID = trackingID
+    }
 
     func viewDidLoad() {
         locationManager.requestAlwaysAuthorization()

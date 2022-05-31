@@ -11,12 +11,11 @@ class PublisherStatusViewController: UIViewController {
     
     var viewModel: PublisherStatusViewModel?
     
-    func configure() {
-        
+    func configure(resolution: PublisherResolution, trackingID: String) {
+        viewModel = PublisherStatusViewModel(publisherResolution: resolution, trackingID: trackingID)
     }
     
     override func viewDidLoad() {
-        viewModel = PublisherStatusViewModel()
         viewModel?.viewDidLoad()
         
         super.viewDidLoad()

@@ -36,18 +36,13 @@ enum PublisherResolution {
     }
 }
 
-class AATService: NSObject {
+class AATService {
     let ablyAPIKey = EnvironmentHelper.ABLY_API_KEY
     let mapBoxKey = EnvironmentHelper.MAPBOX_ACCESS_TOKEN
     
     var delegate: AATServiceDelegate?
     
     private var publisher: Publisher?
-        
-    override init() {
-        
-        super.init()
-    }
     
     func startPublisher(trackableID: String, publisherResolution: PublisherResolution, routingProfile: RoutingProfile, destination: LocationCoordinate? = nil) {
         //TODO: We'll be using token auth instead
