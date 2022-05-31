@@ -2,14 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need your location to track your delivery to the customer.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>We need your location to track your delivery to the customer.</string>
-	<key>MAPBOX_ACCESS_TOKEN</key>
-	<string>$(MAPBOX_ACCESS_TOKEN)</string>
+	<string>We need to know your location to track where your delivery is</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need to know your location to track where your delivery is</string>
 	<key>ABLY_API_KEY</key>
 	<string>$(ABLY_API_KEY)</string>
+	<key>MAPBOX_ACCESS_TOKEN</key>
+	<string>$(MAPBOX_ACCESS_TOKEN)</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -29,5 +29,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 </dict>
 </plist>
