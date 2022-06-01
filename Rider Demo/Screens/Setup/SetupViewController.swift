@@ -29,6 +29,13 @@ class SetupViewController: UIViewController {
         routingProfileSegmentedControl.backgroundColor = segmentedControlBackgroundColor
         routingProfileSegmentedControl.selectedSegmentIndex = 0
 
+        trackableIDTextField.delegate = self
+        latitudeTextField.delegate = self
+        longitudeTextField.delegate = self
+
+        latitudeTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
+        longitudeTextField.keyboardType = UIKeyboardType.numbersAndPunctuation
+
         super.viewDidLoad()
     }
 
@@ -47,5 +54,12 @@ class SetupViewController: UIViewController {
         publisherStatusViewController.configure(resolution: resolution, trackingID: text, routingProfile: routingProfile, destination: destination ?? nil)
 
         navigationController?.pushViewController(publisherStatusViewController, animated: true)
+    }
+}
+
+extension SetupViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
