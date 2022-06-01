@@ -10,7 +10,7 @@ import CoreLocation
 import AblyAssetTrackingPublisher
 
 class SetupViewModel: NSObject {
-    
+
     func getDestination(latitude: String?, longitude: String?) -> LocationCoordinate? {
         guard let latitude = latitude,
               let longitude = longitude,
@@ -19,10 +19,10 @@ class SetupViewModel: NSObject {
         else {
             return nil
         }
-        
+
         return LocationCoordinate(latitude: latitudeDegrees, longitude: longitudeDegrees)
     }
-    
+
     func getSelectedRoutingProfile(routingIndex: Int) -> RoutingProfile {
         switch routingIndex {
         case 0:
@@ -37,7 +37,7 @@ class SetupViewModel: NSObject {
             return RoutingProfile.driving
         }
     }
-    
+
     func getSelectedPublisherResolution(resolutionIndex: Int) -> PublisherResolution {
         switch resolutionIndex {
         case 0:
