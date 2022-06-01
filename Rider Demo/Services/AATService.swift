@@ -7,6 +7,7 @@
 
 import Foundation
 import AblyAssetTrackingPublisher
+import CoreLocation.CLLocation
 
 protocol AATServiceDelegate {
     func publisher(publisher: Publisher, didFailWithError error: ErrorInformation)
@@ -79,22 +80,18 @@ class AATService {
 extension AATService: PublisherDelegate {
     //MARK: PublisherDelegate
     func publisher(sender: Publisher, didFailWithError error: ErrorInformation) {
-        print("didFailWithError: \(error)")
         delegate?.publisher(publisher: sender, didFailWithError: error)
     }
     
     func publisher(sender: Publisher, didUpdateEnhancedLocation location: EnhancedLocationUpdate) {
         delegate?.publisher(publisher: sender, didUpdateEnhancedLocation: location)
-        print("didUpdateEnhancedLocation: \(location)")
     }
     
     func publisher(sender: Publisher, didChangeConnectionState state: ConnectionState, forTrackable trackable: Trackable) {
         delegate?.publisher(publisher: sender, didChangeConnectionState: state, forTrackable: trackable)
-        print("didChangeConnectionState: \(state), \nforTrackable: \(trackable)")
     }
     
     func publisher(sender: Publisher, didUpdateResolution resolution: Resolution) {
         delegate?.publisher(publisher: sender, didUpdateResolution: resolution)
-        print("didUpdateResolution: \(resolution)")
     }
 }

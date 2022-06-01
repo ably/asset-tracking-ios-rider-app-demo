@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRD-G3-8em" userLabel="Start Tracking Button">
-                                <rect key="frame" x="124" y="380" width="166" height="48"/>
+                                <rect key="frame" x="124" y="587" width="166" height="48"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="REI-A4-XF6"/>
@@ -55,7 +55,7 @@
                                     <action selector="startTrackingButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="N8e-Vq-jrK"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4m6-4L-CP6" userLabel="Select Resolution Segmented Control">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4m6-4L-CP6" userLabel="Resolution Segmented Control">
                                 <rect key="frame" x="83" y="313" width="248" height="32"/>
                                 <segments>
                                     <segment title="Low"/>
@@ -64,6 +64,56 @@
                                 </segments>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8VI-aj-zxf" userLabel="Routing Profile Segmented Control">
+                                <rect key="frame" x="69.5" y="520" width="275" height="32"/>
+                                <segments>
+                                    <segment title="Driving"/>
+                                    <segment title="Cycling"/>
+                                    <segment title="Walking"/>
+                                    <segment title="Traffic"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Optional) Destination Coordinates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlj-th-Um7" userLabel="Destination Coordinates Label">
+                                <rect key="frame" x="73" y="380" width="268" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5gW-oo-xeD" userLabel="Latitude Label">
+                                <rect key="frame" x="26.5" y="413" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uG7-hj-3Jk" userLabel="Longitude Label">
+                                <rect key="frame" x="313.5" y="413" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BsR-50-sh3" userLabel="Latitude Text Field">
+                                <rect key="frame" x="20" y="442" width="80" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="eYv-XJ-1GF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sjJ-TW-Vda" userLabel="Longitude Text Field">
+                                <rect key="frame" x="314" y="442" width="80" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ilU-ib-vuR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Routing Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcB-Dc-Dqa" userLabel="Routing Profile Label">
+                                <rect key="frame" x="151" y="487" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -74,21 +124,38 @@
                             <constraint firstItem="JRD-G3-8em" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Oe-x5-Kjr"/>
                             <constraint firstItem="GRX-XB-dPt" firstAttribute="top" secondItem="czT-Mg-c8w" secondAttribute="bottom" constant="48" id="B3V-Gg-f7k"/>
                             <constraint firstItem="8B7-i8-Lvk" firstAttribute="top" secondItem="GRX-XB-dPt" secondAttribute="bottom" constant="12" id="E3K-KI-2mr"/>
-                            <constraint firstItem="JRD-G3-8em" firstAttribute="top" secondItem="4m6-4L-CP6" secondAttribute="bottom" constant="36" id="JWd-QI-Mdy"/>
+                            <constraint firstItem="uG7-hj-3Jk" firstAttribute="centerY" secondItem="5gW-oo-xeD" secondAttribute="centerY" id="GvJ-lZ-ddG"/>
+                            <constraint firstItem="sjJ-TW-Vda" firstAttribute="top" secondItem="uG7-hj-3Jk" secondAttribute="bottom" constant="8" symbolic="YES" id="IQK-Ka-CGP"/>
+                            <constraint firstItem="5gW-oo-xeD" firstAttribute="centerX" secondItem="BsR-50-sh3" secondAttribute="centerX" id="Jdj-nv-hdL"/>
+                            <constraint firstItem="JRD-G3-8em" firstAttribute="top" secondItem="8VI-aj-zxf" secondAttribute="bottom" constant="36" id="KRQ-Oh-QIt"/>
+                            <constraint firstItem="BsR-50-sh3" firstAttribute="top" secondItem="5gW-oo-xeD" secondAttribute="bottom" constant="8" symbolic="YES" id="Lyt-Eo-UV9"/>
+                            <constraint firstItem="uG7-hj-3Jk" firstAttribute="centerX" secondItem="sjJ-TW-Vda" secondAttribute="centerX" id="OmL-ip-lcp"/>
                             <constraint firstItem="4m6-4L-CP6" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.6" id="PRd-4L-JQ3"/>
+                            <constraint firstItem="5gW-oo-xeD" firstAttribute="top" secondItem="Mlj-th-Um7" secondAttribute="bottom" constant="12" id="RHe-c9-pEi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GRX-XB-dPt" secondAttribute="trailing" constant="20" id="ZRX-H9-dPT"/>
                             <constraint firstItem="czT-Mg-c8w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="apR-Zo-6a9"/>
                             <constraint firstItem="JRD-G3-8em" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="bOR-Eq-wqJ"/>
+                            <constraint firstItem="8VI-aj-zxf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cse-rH-Fmh"/>
                             <constraint firstItem="4m6-4L-CP6" firstAttribute="top" secondItem="Ins-Uy-yOp" secondAttribute="bottom" constant="12" id="eN2-uL-bWZ"/>
                             <constraint firstItem="Ins-Uy-yOp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eUS-eX-PEA"/>
+                            <constraint firstItem="GcB-Dc-Dqa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fbj-Rh-ODG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8B7-i8-Lvk" secondAttribute="trailing" constant="20" id="gbl-TL-LDz"/>
                             <constraint firstItem="czT-Mg-c8w" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gfw-5R-B0d"/>
+                            <constraint firstItem="BsR-50-sh3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="haq-5O-7cg"/>
+                            <constraint firstItem="Mlj-th-Um7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="o0Z-tb-TTn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ins-Uy-yOp" secondAttribute="trailing" constant="20" id="plN-fW-3d0"/>
+                            <constraint firstItem="GcB-Dc-Dqa" firstAttribute="top" secondItem="BsR-50-sh3" secondAttribute="bottom" constant="11" id="qrB-Dv-zJK"/>
+                            <constraint firstItem="Mlj-th-Um7" firstAttribute="top" secondItem="4m6-4L-CP6" secondAttribute="bottom" constant="36" id="rFk-aq-Ryo"/>
                             <constraint firstItem="GRX-XB-dPt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="rnV-R7-nHH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sjJ-TW-Vda" secondAttribute="trailing" constant="20" id="sCX-6A-8XS"/>
+                            <constraint firstItem="8VI-aj-zxf" firstAttribute="top" secondItem="GcB-Dc-Dqa" secondAttribute="bottom" constant="12" id="ybw-Za-v99"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yi6-cz-6Ij"/>
                     <connections>
+                        <outlet property="latitudeTextField" destination="BsR-50-sh3" id="EHy-6y-04p"/>
+                        <outlet property="longitudeTextField" destination="sjJ-TW-Vda" id="pa7-dn-HYz"/>
+                        <outlet property="routingProfileSegmentedControl" destination="8VI-aj-zxf" id="pxD-3M-9nr"/>
                         <outlet property="selectResolutionSegmentedControl" destination="4m6-4L-CP6" id="8PL-MB-Rf2"/>
                         <outlet property="startTrackingButton" destination="JRD-G3-8em" id="ofV-Ar-Zho"/>
                         <outlet property="trackableIDTextField" destination="8B7-i8-Lvk" id="qeD-1C-zHg"/>
