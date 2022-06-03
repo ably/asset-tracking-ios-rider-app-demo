@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Trackable View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddTrackable" id="Y6W-OH-hqX" customClass="AddTrackableViewController" customModule="Rider_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the new trackable id:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE6-J5-d3p" userLabel="Enter Trackable ID Label">
+                                <rect key="frame" x="20" y="58" width="203" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0AP-69-9bt" userLabel="Trackable ID Text Field">
+                                <rect key="frame" x="20" y="91" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Optional) Destination Coordinates:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iCG-rk-EcY" userLabel="Destination Coordinates Label">
+                                <rect key="frame" x="73" y="161" width="268" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-jk-aNN" userLabel="Latitude Label">
+                                <rect key="frame" x="20" y="194" width="67" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COP-yE-ljc" userLabel="Longitude Label">
+                                <rect key="frame" x="313" y="194" width="81" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ugp-Gb-rMO" userLabel="Latitude Text Field">
+                                <rect key="frame" x="13.5" y="223" width="80" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="seC-UL-jEH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pa5-NQ-4Gx" userLabel="Longitude Text Field">
+                                <rect key="frame" x="313.5" y="223" width="80" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="TZE-Zt-HBe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWH-FL-Fci" userLabel="Add Button">
+                                <rect key="frame" x="124" y="293" width="166" height="48"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Mx0-aB-DkH"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonTapped" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8Qd-WM-BhX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oE6-J5-d3p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="30d-S7-jGM"/>
+                            <constraint firstItem="0AP-69-9bt" firstAttribute="top" secondItem="oE6-J5-d3p" secondAttribute="bottom" constant="12" id="7gV-Og-ZRn"/>
+                            <constraint firstItem="ObU-jk-aNN" firstAttribute="centerX" secondItem="ugp-Gb-rMO" secondAttribute="centerX" id="AOj-NG-VSO"/>
+                            <constraint firstItem="eWH-FL-Fci" firstAttribute="top" secondItem="ugp-Gb-rMO" secondAttribute="bottom" constant="36" id="OOv-Id-eUD"/>
+                            <constraint firstItem="pa5-NQ-4Gx" firstAttribute="top" secondItem="COP-yE-ljc" secondAttribute="bottom" constant="8" symbolic="YES" id="Oiz-U8-yyu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0AP-69-9bt" secondAttribute="trailing" constant="20" id="Ojg-du-uhM"/>
+                            <constraint firstItem="iCG-rk-EcY" firstAttribute="top" secondItem="0AP-69-9bt" secondAttribute="bottom" constant="36" id="QtA-uV-ebK"/>
+                            <constraint firstItem="COP-yE-ljc" firstAttribute="centerX" secondItem="pa5-NQ-4Gx" secondAttribute="centerX" id="Yqx-xJ-mv9"/>
+                            <constraint firstItem="eWH-FL-Fci" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.4" id="bG6-4W-5dv"/>
+                            <constraint firstItem="ObU-jk-aNN" firstAttribute="top" secondItem="iCG-rk-EcY" secondAttribute="bottom" constant="12" id="dlR-8G-kMM"/>
+                            <constraint firstItem="iCG-rk-EcY" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="hZN-9u-oep"/>
+                            <constraint firstItem="0AP-69-9bt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="iZv-nd-vz5"/>
+                            <constraint firstItem="ugp-Gb-rMO" firstAttribute="top" secondItem="ObU-jk-aNN" secondAttribute="bottom" constant="8" symbolic="YES" id="kAm-pa-rJW"/>
+                            <constraint firstItem="eWH-FL-Fci" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="mbp-2Y-Obk"/>
+                            <constraint firstItem="COP-yE-ljc" firstAttribute="centerY" secondItem="ObU-jk-aNN" secondAttribute="centerY" id="nY9-Xc-ERs"/>
+                            <constraint firstItem="oE6-J5-d3p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="14" id="nhy-bl-lza"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="COP-yE-ljc" secondAttribute="trailing" constant="20" id="olR-Fb-1dd"/>
+                            <constraint firstItem="ObU-jk-aNN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="wMT-k1-CKh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addButton" destination="eWH-FL-Fci" id="0rc-5S-vhH"/>
+                        <outlet property="latitudeTextField" destination="ugp-Gb-rMO" id="JMo-Dc-QqT"/>
+                        <outlet property="longitudeTextField" destination="pa5-NQ-4Gx" id="f14-9f-hn6"/>
+                        <outlet property="trackableIDTextField" destination="0AP-69-9bt" id="JWp-3I-2hH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="68"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

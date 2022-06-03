@@ -14,22 +14,34 @@ class PublisherStatusViewModel {
     let locationManager = CLLocationManager()
 
     let publisherResolution: PublisherResolution
-    let trackingID: String
     let routingProfile: RoutingProfile
-    let destination: LocationCoordinate?
 
-    let aatService = AATService()
+    let aatService = AATService.sharedInstance
 
-    init(publisherResolution: PublisherResolution, trackingID: String, routingProfile: RoutingProfile, destination: LocationCoordinate? = nil) {
+    init(publisherResolution: PublisherResolution, routingProfile: RoutingProfile) {
         self.publisherResolution = publisherResolution
-        self.trackingID = trackingID
         self.routingProfile = routingProfile
-        self.destination = destination
     }
 
     func viewDidLoad() {
         locationManager.requestAlwaysAuthorization()
-        aatService.startPublisher(trackableID: trackingID, publisherResolution: publisherResolution, routingProfile: routingProfile, destination: destination)
+        aatService.startPublisher(publisherResolution: publisherResolution, routingProfile: routingProfile)
+    }
+    
+    func viewWillDisappear() {
+        aatService.stopPublisher()
+    }
+    
+    func addTrackable(trackable: Trackable) {
+        aatService.addTrackable(trackable: trackable, completion: {_ in})
+    }
+    
+    func selectTrackable(trackable: Trackable) {
+        
+    }
+    
+    func getTrackables() -> [Trackable] {
+        return aatService.trackables
     }
 }
 
