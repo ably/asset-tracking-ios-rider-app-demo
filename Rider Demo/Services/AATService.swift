@@ -20,23 +20,6 @@ protocol AATServiceDelegate: AnyObject {
     func publisher(publisher: Publisher, didUpdateResolution resolution: Resolution)
 }
 
-enum PublisherResolution {
-    case low
-    case medium
-    case high
-
-    var resolution: Resolution {
-        switch self {
-        case .low:
-            return Resolution(accuracy: Accuracy.minimum, desiredInterval: 10000, minimumDisplacement: 1000)
-        case .medium:
-            return Resolution(accuracy: Accuracy.minimum, desiredInterval: 5000, minimumDisplacement: 500)
-        case .high:
-            return Resolution(accuracy: Accuracy.minimum, desiredInterval: 1000, minimumDisplacement: 100)
-        }
-    }
-}
-
 class AATService {
     static let sharedInstance = AATService()
     
@@ -44,12 +27,13 @@ class AATService {
     let mapBoxKey = EnvironmentHelper.mapboxAccessToken
 
     var delegate: AATServiceDelegate?
-
+    
+    private(set) var desiredResolution: Resolution?
     private var publisher: Publisher?
-
     private(set) var trackables: [Trackable] = []
 
-    func startPublisher(publisherResolution: PublisherResolution, routingProfile: RoutingProfile) {
+    func startPublisher(publisherResolution: Resolution, routingProfile: RoutingProfile) {
+        desiredResolution = publisherResolution
         let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? "unknown device"
         // TODO: We'll be using token auth instead
 
@@ -57,7 +41,7 @@ class AATService {
             .connection(ConnectionConfiguration(apiKey: ablyAPIKey, clientId: deviceID))
             .mapboxConfiguration(MapboxConfiguration(mapboxKey: EnvironmentHelper.mapboxAccessToken))
             .log(LogConfiguration())
-            .resolutionPolicyFactory(DefaultResolutionPolicyFactory(defaultResolution: publisherResolution.resolution))
+            .resolutionPolicyFactory(DefaultResolutionPolicyFactory(defaultResolution: publisherResolution))
             .routingProfile(routingProfile)
             .delegate(self)
             .start()
@@ -68,6 +52,7 @@ class AATService {
             guard let self = self else { return }
             self.publisher = nil
             self.trackables = []
+            self.desiredResolution = nil
             completion?(result)
         }
     }
@@ -98,6 +83,7 @@ extension AATService: PublisherDelegate {
 
     func publisher(sender: Publisher, didChangeConnectionState state: ConnectionState, forTrackable trackable: Trackable) {
         delegate?.publisher(publisher: sender, didChangeConnectionState: state, forTrackable: trackable)
+        print("aatService didChangeConnectionState: \(state), forTrackable: \(trackable.id)")
     }
 
     func publisher(sender: Publisher, didUpdateResolution resolution: Resolution) {

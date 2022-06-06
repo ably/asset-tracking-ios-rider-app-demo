@@ -10,21 +10,23 @@ import CoreLocation
 import AblyAssetTrackingPublisher
 
 class PublisherStatusViewModel {
-
+    
+    weak var viewController: PublisherStatusViewController?
     let locationManager = CLLocationManager()
 
-    let publisherResolution: PublisherResolution
+    let publisherResolution: Resolution
     let routingProfile: RoutingProfile
-
     let aatService = AATService.sharedInstance
 
-    init(publisherResolution: PublisherResolution, routingProfile: RoutingProfile) {
+    init(publisherResolution: Resolution, routingProfile: RoutingProfile, viewController: PublisherStatusViewController) {
         self.publisherResolution = publisherResolution
         self.routingProfile = routingProfile
+        self.viewController = viewController
     }
 
     func viewDidLoad() {
         locationManager.requestAlwaysAuthorization()
+        aatService.delegate = self
         aatService.startPublisher(publisherResolution: publisherResolution, routingProfile: routingProfile)
     }
     
@@ -37,7 +39,20 @@ class PublisherStatusViewModel {
     }
     
     func selectTrackable(trackable: Trackable) {
+        aatService.trackTrackable(trackable: trackable) { result in
+            print("Track Trackable result: \(result)")
+        }
+    }
+    
+    func getActiveTrackable() -> Trackable? {
+        return aatService.getActiveTrackable()
+    }
+    
+    func getActiveTrackableCoordinates() -> LocationCoordinate? {
+        guard let activeTrackable = aatService.getActiveTrackable()
+        else { return nil }
         
+        return activeTrackable.destination
     }
     
     func getTrackables() -> [Trackable] {
@@ -49,16 +64,24 @@ extension PublisherStatusViewModel: AATServiceDelegate {
     func publisher(publisher: Publisher, didFailWithError error: ErrorInformation) {
         print("didFailWithError: \(error)")
     }
-
+    
     func publisher(publisher: Publisher, didUpdateEnhancedLocation location: EnhancedLocationUpdate) {
-        print("didUpdateEnhancedLocation: \(location)")
+        let locationCoordinates = location.location.coordinate
+        let horizontalAccuracy = location.location.horizontalAccuracy
+        viewController?.updateCurrentLocation(latitude: String(locationCoordinates.latitude), longitude: String(locationCoordinates.longitude), horizontalAccuracy: String(horizontalAccuracy))
+        print("didUpdateEnhancedLocation: \(location.location.coordinate)")
     }
 
     func publisher(publisher: Publisher, didChangeConnectionState state: ConnectionState, forTrackable trackable: Trackable) {
-        print("didChangeConnectionState: \(state), \nforTrackable: \(trackable)")
+        let activeTrackable = aatService.getActiveTrackable()
+        if activeTrackable?.id == trackable.id {
+            viewController?.updateConnectionStatus(connectionState: state)
+        }
+        print("didChangeConnectionState: \(state), \nforTrackable: \(trackable.id)")
     }
 
     func publisher(publisher: Publisher, didUpdateResolution resolution: Resolution) {
+        viewController?.updateResolutionLabels(resolution: resolution)
         print("didUpdateResolution: \(resolution)")
     }
 }

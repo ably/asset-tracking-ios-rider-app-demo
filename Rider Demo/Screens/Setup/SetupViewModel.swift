@@ -38,16 +38,20 @@ class SetupViewModel: NSObject {
         }
     }
 
-    func getSelectedPublisherResolution(resolutionIndex: Int) -> PublisherResolution {
-        switch resolutionIndex {
+    func getSelectedPublisherResolutionAccuracy(accuracyIndex: Int) -> Accuracy {
+        switch accuracyIndex {
         case 0:
-            return PublisherResolution.low
+            return Accuracy.minimum
         case 1:
-            return PublisherResolution.medium
+            return Accuracy.low
         case 2:
-            return PublisherResolution.high
+            return Accuracy.balanced
+        case 3:
+            return Accuracy.high
+        case 4:
+            return Accuracy.maximum
         default:
-            return PublisherResolution.low
+            return Accuracy.low
         }
     }
 }

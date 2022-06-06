@@ -28,17 +28,59 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4m6-4L-CP6" userLabel="Resolution Segmented Control">
-                                <rect key="frame" x="83" y="169" width="248" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min. Displacement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SN-hA-8vv" userLabel="Min. Displacement Label">
+                                <rect key="frame" x="20" y="173" width="112" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired Interval" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaS-yl-tDV" userLabel="Desired Interval Label">
+                                <rect key="frame" x="299" y="173" width="95" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yTK-Fr-acR" userLabel="Minimum Displacement Text Field">
+                                <rect key="frame" x="26" y="201" width="100" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Gvq-V0-Ozy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SMF-S2-bfG" userLabel="Desired Interval Text Field">
+                                <rect key="frame" x="296.5" y="201" width="100" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="TTg-6a-VWq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20G-Vq-XKM" userLabel="Accuracy Label">
+                                <rect key="frame" x="176.5" y="244" width="61" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KjS-Pl-FBO" userLabel="Accuracy Segmented Control">
+                                <rect key="frame" x="87.5" y="272" width="239" height="32"/>
                                 <segments>
+                                    <segment title="Min"/>
                                     <segment title="Low"/>
-                                    <segment title="Medium"/>
+                                    <segment title="Bal"/>
                                     <segment title="High"/>
+                                    <segment title="Max"/>
                                 </segments>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Routing Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcB-Dc-Dqa" userLabel="Routing Profile Label">
+                                <rect key="frame" x="151" y="351" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8VI-aj-zxf" userLabel="Routing Profile Segmented Control">
-                                <rect key="frame" x="69.5" y="269" width="275" height="32"/>
+                                <rect key="frame" x="69.5" y="384" width="275" height="32"/>
                                 <segments>
                                     <segment title="Driving"/>
                                     <segment title="Cycling"/>
@@ -47,14 +89,8 @@
                                 </segments>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Routing Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GcB-Dc-Dqa" userLabel="Routing Profile Label">
-                                <rect key="frame" x="151" y="236" width="112" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRD-G3-8em" userLabel="Start Publisher Button">
-                                <rect key="frame" x="124" y="336" width="166" height="48"/>
+                                <rect key="frame" x="124" y="451" width="166" height="48"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="REI-A4-XF6"/>
@@ -72,27 +108,38 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4m6-4L-CP6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7FD-6h-xtg"/>
+                            <constraint firstItem="GcB-Dc-Dqa" firstAttribute="top" secondItem="KjS-Pl-FBO" secondAttribute="bottom" constant="48" id="06q-rA-cIG"/>
+                            <constraint firstItem="SMF-S2-bfG" firstAttribute="centerY" secondItem="yTK-Fr-acR" secondAttribute="centerY" id="2eQ-5d-EH3"/>
+                            <constraint firstItem="yTK-Fr-acR" firstAttribute="centerX" secondItem="4SN-hA-8vv" secondAttribute="centerX" id="8zT-rG-oZb"/>
                             <constraint firstItem="JRD-G3-8em" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9Oe-x5-Kjr"/>
+                            <constraint firstItem="20G-Vq-XKM" firstAttribute="top" secondItem="yTK-Fr-acR" secondAttribute="bottom" constant="9" id="AdS-wA-gsH"/>
+                            <constraint firstItem="KjS-Pl-FBO" firstAttribute="top" secondItem="20G-Vq-XKM" secondAttribute="bottom" constant="12" id="D5z-aY-6Tq"/>
+                            <constraint firstItem="yTK-Fr-acR" firstAttribute="top" secondItem="4SN-hA-8vv" secondAttribute="bottom" constant="12" id="Jxf-7H-zZm"/>
                             <constraint firstItem="JRD-G3-8em" firstAttribute="top" secondItem="8VI-aj-zxf" secondAttribute="bottom" constant="36" id="KRQ-Oh-QIt"/>
-                            <constraint firstItem="4m6-4L-CP6" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.6" id="PRd-4L-JQ3"/>
                             <constraint firstItem="Ins-Uy-yOp" firstAttribute="top" secondItem="czT-Mg-c8w" secondAttribute="top" constant="36" id="Vtt-JL-Bdo"/>
+                            <constraint firstItem="4SN-hA-8vv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XcD-cz-Qb0"/>
+                            <constraint firstItem="SMF-S2-bfG" firstAttribute="top" secondItem="NaS-yl-tDV" secondAttribute="bottom" constant="12" id="ZEE-IW-GTp"/>
                             <constraint firstItem="czT-Mg-c8w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="apR-Zo-6a9"/>
                             <constraint firstItem="JRD-G3-8em" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="bOR-Eq-wqJ"/>
                             <constraint firstItem="8VI-aj-zxf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cse-rH-Fmh"/>
-                            <constraint firstItem="4m6-4L-CP6" firstAttribute="top" secondItem="Ins-Uy-yOp" secondAttribute="bottom" constant="12" id="eN2-uL-bWZ"/>
                             <constraint firstItem="GcB-Dc-Dqa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="fbj-Rh-ODG"/>
                             <constraint firstItem="czT-Mg-c8w" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gfw-5R-B0d"/>
                             <constraint firstItem="Ins-Uy-yOp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="moB-vv-ddL"/>
+                            <constraint firstItem="20G-Vq-XKM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="nD4-UC-pe1"/>
+                            <constraint firstItem="SMF-S2-bfG" firstAttribute="centerX" secondItem="NaS-yl-tDV" secondAttribute="centerX" id="ncN-qt-ob2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ins-Uy-yOp" secondAttribute="trailing" constant="20" id="plN-fW-3d0"/>
-                            <constraint firstItem="GcB-Dc-Dqa" firstAttribute="top" secondItem="4m6-4L-CP6" secondAttribute="bottom" constant="36" id="uDp-gi-Hwc"/>
+                            <constraint firstItem="KjS-Pl-FBO" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="poK-HO-dwK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NaS-yl-tDV" secondAttribute="trailing" constant="20" id="sOU-qe-BfZ"/>
                             <constraint firstItem="8VI-aj-zxf" firstAttribute="top" secondItem="GcB-Dc-Dqa" secondAttribute="bottom" constant="12" id="ybw-Za-v99"/>
+                            <constraint firstItem="4SN-hA-8vv" firstAttribute="top" secondItem="Ins-Uy-yOp" secondAttribute="bottom" constant="16" id="zOJ-mC-yWG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yi6-cz-6Ij"/>
                     <connections>
+                        <outlet property="accuracySegmentedControl" destination="KjS-Pl-FBO" id="8Y2-yz-6pm"/>
+                        <outlet property="desiredIntervalTextField" destination="SMF-S2-bfG" id="NXk-XX-N3L"/>
+                        <outlet property="minimumDisplacementTextField" destination="yTK-Fr-acR" id="ggR-SG-cdr"/>
                         <outlet property="routingProfileSegmentedControl" destination="8VI-aj-zxf" id="pxD-3M-9nr"/>
-                        <outlet property="selectResolutionSegmentedControl" destination="4m6-4L-CP6" id="8PL-MB-Rf2"/>
                         <outlet property="startPublisherButton" destination="JRD-G3-8em" id="VXh-Sl-HP0"/>
                     </connections>
                 </viewController>
