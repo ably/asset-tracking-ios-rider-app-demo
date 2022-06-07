@@ -17,6 +17,8 @@ class PublisherStatusViewModel {
     let publisherResolution: Resolution
     let routingProfile: RoutingProfile
     let aatService = AATService.sharedInstance
+    
+    var minAcceptanceDistance = 150
 
     init(publisherResolution: Resolution, routingProfile: RoutingProfile, viewController: PublisherStatusViewController) {
         self.publisherResolution = publisherResolution
@@ -38,10 +40,8 @@ class PublisherStatusViewModel {
         aatService.addTrackable(trackable: trackable, completion: {_ in})
     }
     
-    func selectTrackable(trackable: Trackable) {
-        aatService.trackTrackable(trackable: trackable) { result in
-            print("Track Trackable result: \(result)")
-        }
+    func selectTrackable(trackable: Trackable, completion: @escaping ResultHandler<Void>) {
+        aatService.trackTrackable(trackable: trackable, completion: completion)
     }
     
     func getActiveTrackable() -> Trackable? {
@@ -58,6 +58,29 @@ class PublisherStatusViewModel {
     func getTrackables() -> [Trackable] {
         return aatService.trackables
     }
+    
+    func handleFinishTracking() {
+        guard let activeTrackable = getActiveTrackable() else { return }
+        aatService.removeTrackable(trackable: activeTrackable) {[weak self] result in
+            switch result {
+            case .success(let success):
+                if success {
+                    self?.viewController?.finishedTrackingResetUI()
+                }
+            case .failure(let errorInfo):
+                print("PublisherStatusViewModel handleFinishTracking error: \(errorInfo)")
+            }
+        }
+    }
+    
+    private func determineDistanceToDestination(currentLocation: CLLocation) {
+        guard let destination2d = getActiveTrackableCoordinates()
+        else { return }
+        
+        let destination = CLLocation(latitude: destination2d.latitude, longitude: destination2d.longitude)
+        let distance = currentLocation.distance(from: destination)
+        viewController?.updateDistance(distance: Int(distance))
+    }
 }
 
 extension PublisherStatusViewModel: AATServiceDelegate {
@@ -68,7 +91,11 @@ extension PublisherStatusViewModel: AATServiceDelegate {
     func publisher(publisher: Publisher, didUpdateEnhancedLocation location: EnhancedLocationUpdate) {
         let locationCoordinates = location.location.coordinate
         let horizontalAccuracy = location.location.horizontalAccuracy
-        viewController?.updateCurrentLocation(latitude: String(locationCoordinates.latitude), longitude: String(locationCoordinates.longitude), horizontalAccuracy: String(horizontalAccuracy))
+        
+        let coreLocation = location.location.toCoreLocation()
+        determineDistanceToDestination(currentLocation: coreLocation)
+        
+        viewController?.updateCurrentLocation(latitude: String(locationCoordinates.latitude), longitude: String(locationCoordinates.longitude), horizontalAccuracy: String(Int(horizontalAccuracy)))
         print("didUpdateEnhancedLocation: \(location.location.coordinate)")
     }
 

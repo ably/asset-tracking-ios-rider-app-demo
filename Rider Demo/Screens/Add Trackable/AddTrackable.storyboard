@@ -62,7 +62,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWH-FL-Fci" userLabel="Add Button">
-                                <rect key="frame" x="124" y="293" width="166" height="48"/>
+                                <rect key="frame" x="103.5" y="293" width="207" height="48"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Mx0-aB-DkH"/>
@@ -76,6 +76,21 @@
                                     <action selector="addButtonTapped" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8Qd-WM-BhX"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TM2-px-mPA" userLabel="Add And Actively Track Button">
+                                <rect key="frame" x="103.5" y="389" width="207" height="48"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="bIw-qk-rRH"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Add &amp; Acrively Track">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addAndActivelyTrackButtonTapped" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sY8-hm-AZa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -83,12 +98,14 @@
                             <constraint firstItem="oE6-J5-d3p" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="30d-S7-jGM"/>
                             <constraint firstItem="0AP-69-9bt" firstAttribute="top" secondItem="oE6-J5-d3p" secondAttribute="bottom" constant="12" id="7gV-Og-ZRn"/>
                             <constraint firstItem="ObU-jk-aNN" firstAttribute="centerX" secondItem="ugp-Gb-rMO" secondAttribute="centerX" id="AOj-NG-VSO"/>
+                            <constraint firstItem="TM2-px-mPA" firstAttribute="top" secondItem="eWH-FL-Fci" secondAttribute="bottom" constant="48" id="FrA-PR-U2n"/>
+                            <constraint firstItem="TM2-px-mPA" firstAttribute="width" secondItem="eWH-FL-Fci" secondAttribute="width" id="IMl-60-vs9"/>
                             <constraint firstItem="eWH-FL-Fci" firstAttribute="top" secondItem="ugp-Gb-rMO" secondAttribute="bottom" constant="36" id="OOv-Id-eUD"/>
                             <constraint firstItem="pa5-NQ-4Gx" firstAttribute="top" secondItem="COP-yE-ljc" secondAttribute="bottom" constant="8" symbolic="YES" id="Oiz-U8-yyu"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0AP-69-9bt" secondAttribute="trailing" constant="20" id="Ojg-du-uhM"/>
                             <constraint firstItem="iCG-rk-EcY" firstAttribute="top" secondItem="0AP-69-9bt" secondAttribute="bottom" constant="36" id="QtA-uV-ebK"/>
                             <constraint firstItem="COP-yE-ljc" firstAttribute="centerX" secondItem="pa5-NQ-4Gx" secondAttribute="centerX" id="Yqx-xJ-mv9"/>
-                            <constraint firstItem="eWH-FL-Fci" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.4" id="bG6-4W-5dv"/>
+                            <constraint firstItem="eWH-FL-Fci" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.5" id="bG6-4W-5dv"/>
                             <constraint firstItem="ObU-jk-aNN" firstAttribute="top" secondItem="iCG-rk-EcY" secondAttribute="bottom" constant="12" id="dlR-8G-kMM"/>
                             <constraint firstItem="iCG-rk-EcY" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="hZN-9u-oep"/>
                             <constraint firstItem="0AP-69-9bt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="iZv-nd-vz5"/>
@@ -98,9 +115,11 @@
                             <constraint firstItem="oE6-J5-d3p" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="14" id="nhy-bl-lza"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="COP-yE-ljc" secondAttribute="trailing" constant="20" id="olR-Fb-1dd"/>
                             <constraint firstItem="ObU-jk-aNN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="wMT-k1-CKh"/>
+                            <constraint firstItem="TM2-px-mPA" firstAttribute="centerX" secondItem="eWH-FL-Fci" secondAttribute="centerX" id="y0U-nC-cCD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAndActivelyTrackButton" destination="TM2-px-mPA" id="E1x-5a-UGY"/>
                         <outlet property="addButton" destination="eWH-FL-Fci" id="0rc-5S-vhH"/>
                         <outlet property="latitudeTextField" destination="ugp-Gb-rMO" id="JMo-Dc-QqT"/>
                         <outlet property="longitudeTextField" destination="pa5-NQ-4Gx" id="f14-9f-hn6"/>

@@ -39,91 +39,97 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired resolution:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTW-PJ-KMI" userLabel="Desired resolution Label">
-                                <rect key="frame" x="20" y="160" width="114" height="16"/>
+                                <rect key="frame" x="20" y="202" width="114" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUE-sE-l4e" userLabel="Desired Accuracy Label">
-                                <rect key="frame" x="20" y="182" width="64" height="16"/>
+                                <rect key="frame" x="20" y="224" width="64" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min. Displacement:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RO8-ex-Fkt" userLabel="Desired Minimum Displacement Label">
-                                <rect key="frame" x="20" y="204" width="116" height="16"/>
+                                <rect key="frame" x="20" y="246" width="116" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired Interval:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNo-NW-lN2" userLabel="Desired Interval Label">
-                                <rect key="frame" x="20" y="226" width="99" height="16"/>
+                                <rect key="frame" x="20" y="268" width="99" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Resolution:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zsa-tc-QAt" userLabel="Current Resolution Label">
-                                <rect key="frame" x="20" y="278" width="117" height="16"/>
+                                <rect key="frame" x="20" y="320" width="117" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5e4-1k-Rkx" userLabel="Current Accuracy Label">
-                                <rect key="frame" x="20" y="300" width="64" height="16"/>
+                                <rect key="frame" x="20" y="342" width="64" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min. Displacement:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Py3-li-Kf9" userLabel="Current Minimum Displacement Label">
-                                <rect key="frame" x="20" y="322" width="116" height="16"/>
+                                <rect key="frame" x="20" y="364" width="116" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Desired Interval:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1b-0y-nBa" userLabel="Current Desired Interval Label">
-                                <rect key="frame" x="20" y="344" width="99" height="16"/>
+                                <rect key="frame" x="20" y="386" width="99" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aZ-TP-D2Q" userLabel="Current Location Label">
-                                <rect key="frame" x="20" y="396" width="106" height="16"/>
+                                <rect key="frame" x="20" y="438" width="106" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Destination:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PMT-fb-pSc" userLabel="Destination Label">
-                                <rect key="frame" x="280" y="396" width="114" height="16"/>
+                                <rect key="frame" x="280" y="438" width="114" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COh-bv-V9j" userLabel="Destination Latitude Label">
-                                <rect key="frame" x="340" y="420" width="54" height="16"/>
+                                <rect key="frame" x="340" y="462" width="54" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9z-SQ-hJW" userLabel="Current Latitude Label">
-                                <rect key="frame" x="20" y="418" width="54" height="16"/>
+                                <rect key="frame" x="20" y="460" width="54" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cn2-8o-mhs" userLabel="Current Longitude Label">
-                                <rect key="frame" x="20" y="440" width="65" height="16"/>
+                                <rect key="frame" x="20" y="482" width="65" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Longitude:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqT-mp-u6Q" userLabel="Destination Longitude Label">
-                                <rect key="frame" x="329" y="442" width="65" height="16"/>
+                                <rect key="frame" x="329" y="484" width="65" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horizontal Accuracy:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMM-bn-Mbd" userLabel="Horizontal Accuracy Label">
-                                <rect key="frame" x="20" y="462" width="126" height="16"/>
+                                <rect key="frame" x="20" y="504" width="126" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6Y-qP-bGd" userLabel="Distance Label">
+                                <rect key="frame" x="337" y="506" width="57" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -134,6 +140,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRh-Cg-Sl5" userLabel="Finish Tracking Button">
+                                <rect key="frame" x="103.5" y="568" width="207" height="48"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="dMC-in-KKp"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Finish Tracking">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="finishTrackingButtonTapped" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YoC-tC-spp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Acceptance Distance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osf-LD-XSE" userLabel="Min Acceptance Distance Label">
+                                <rect key="frame" x="20" y="160" width="133" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Auh-7x-vDe" userLabel="Min Acceptance Distance Text Field">
+                                <rect key="frame" x="169" y="151" width="225" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -142,6 +174,7 @@
                             <constraint firstItem="5e4-1k-Rkx" firstAttribute="top" secondItem="Zsa-tc-QAt" secondAttribute="bottom" constant="6" id="56n-TS-utS"/>
                             <constraint firstItem="Xbo-ZR-3yk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="5sn-ar-vky"/>
                             <constraint firstItem="c1b-0y-nBa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="8Ln-5B-pGd"/>
+                            <constraint firstItem="cRh-Cg-Sl5" firstAttribute="top" secondItem="EMM-bn-Mbd" secondAttribute="bottom" constant="48" id="94H-cX-6D1"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="COh-bv-V9j" secondAttribute="trailing" constant="20" id="ALf-yH-sZM"/>
                             <constraint firstItem="UUE-sE-l4e" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="CUk-6h-tRU"/>
                             <constraint firstItem="EMM-bn-Mbd" firstAttribute="top" secondItem="Cn2-8o-mhs" secondAttribute="bottom" constant="6" id="CqQ-XW-M26"/>
@@ -151,35 +184,44 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Ygp-ah-mOj" secondAttribute="trailing" constant="20" id="EoL-2B-ENW"/>
                             <constraint firstItem="Py3-li-Kf9" firstAttribute="top" secondItem="5e4-1k-Rkx" secondAttribute="bottom" constant="6" id="Fjv-Xg-IEw"/>
                             <constraint firstItem="ORQ-uJ-mDQ" firstAttribute="centerX" secondItem="14o-Yq-tIx" secondAttribute="centerX" id="JRh-Vp-21I"/>
+                            <constraint firstItem="Osf-LD-XSE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="LA7-KV-dfG"/>
                             <constraint firstItem="5e4-1k-Rkx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="LIR-RU-6hd"/>
                             <constraint firstItem="COh-bv-V9j" firstAttribute="top" secondItem="PMT-fb-pSc" secondAttribute="bottom" constant="8" symbolic="YES" id="NGP-PI-0ny"/>
                             <constraint firstItem="0aZ-TP-D2Q" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Nev-tB-DDP"/>
+                            <constraint firstItem="Auh-7x-vDe" firstAttribute="leading" secondItem="Osf-LD-XSE" secondAttribute="trailing" constant="16" id="OVm-ZY-VbE"/>
                             <constraint firstItem="14o-Yq-tIx" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Oan-qa-38l"/>
                             <constraint firstItem="Py3-li-Kf9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Ofp-dc-hrL"/>
                             <constraint firstItem="ORQ-uJ-mDQ" firstAttribute="top" secondItem="14o-Yq-tIx" secondAttribute="bottom" constant="12" id="Pri-95-noo"/>
                             <constraint firstItem="Cn2-8o-mhs" firstAttribute="top" secondItem="x9z-SQ-hJW" secondAttribute="bottom" constant="6" id="QWB-jw-Xp1"/>
                             <constraint firstItem="EMM-bn-Mbd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="RpY-hH-P0P"/>
                             <constraint firstItem="RO8-ex-Fkt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Rs3-Bz-s9P"/>
-                            <constraint firstItem="QTW-PJ-KMI" firstAttribute="top" secondItem="ORQ-uJ-mDQ" secondAttribute="bottom" constant="24" id="TwC-0q-S3E"/>
+                            <constraint firstItem="Osf-LD-XSE" firstAttribute="top" secondItem="ORQ-uJ-mDQ" secondAttribute="bottom" constant="24" id="Smq-IS-eEO"/>
                             <constraint firstItem="UUE-sE-l4e" firstAttribute="top" secondItem="QTW-PJ-KMI" secondAttribute="bottom" constant="6" id="Tz6-ui-y1L"/>
                             <constraint firstItem="HNo-NW-lN2" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="VgL-sl-Vyk"/>
+                            <constraint firstItem="cRh-Cg-Sl5" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="Y2A-gX-Fz2"/>
+                            <constraint firstItem="Auh-7x-vDe" firstAttribute="centerY" secondItem="Osf-LD-XSE" secondAttribute="centerY" id="YSe-bb-cam"/>
                             <constraint firstItem="QTW-PJ-KMI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ZC8-LH-CO9"/>
                             <constraint firstItem="JqT-mp-u6Q" firstAttribute="top" secondItem="COh-bv-V9j" secondAttribute="bottom" constant="6" id="aBb-dT-uPb"/>
                             <constraint firstItem="PMT-fb-pSc" firstAttribute="centerY" secondItem="0aZ-TP-D2Q" secondAttribute="centerY" id="doK-Rk-gIq"/>
                             <constraint firstItem="HNo-NW-lN2" firstAttribute="top" secondItem="RO8-ex-Fkt" secondAttribute="bottom" constant="6" id="exd-yj-Pp9"/>
                             <constraint firstItem="Cn2-8o-mhs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="heY-zZ-Lrl"/>
+                            <constraint firstItem="QTW-PJ-KMI" firstAttribute="top" secondItem="Osf-LD-XSE" secondAttribute="bottom" constant="26" id="iCo-ai-Xqz"/>
                             <constraint firstItem="RO8-ex-Fkt" firstAttribute="top" secondItem="UUE-sE-l4e" secondAttribute="bottom" constant="6" id="kUC-ei-hHq"/>
                             <constraint firstItem="Ygp-ah-mOj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="l4j-nE-fZg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="L6Y-qP-bGd" secondAttribute="trailing" constant="20" id="lWW-pr-0AR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Auh-7x-vDe" secondAttribute="trailing" constant="20" id="oyd-pU-vgO"/>
                             <constraint firstItem="0aZ-TP-D2Q" firstAttribute="top" secondItem="c1b-0y-nBa" secondAttribute="bottom" constant="36" id="s0x-0J-tp6"/>
+                            <constraint firstItem="cRh-Cg-Sl5" firstAttribute="width" secondItem="vDu-zF-Fre" secondAttribute="width" multiplier="0.5" id="sIy-HY-2B6"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JqT-mp-u6Q" secondAttribute="trailing" constant="20" id="sKk-SN-ejE"/>
                             <constraint firstItem="Zsa-tc-QAt" firstAttribute="top" secondItem="HNo-NW-lN2" secondAttribute="bottom" constant="36" id="tIv-Ji-Ieu"/>
                             <constraint firstItem="14o-Yq-tIx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="48" id="tcx-H6-IJI"/>
+                            <constraint firstItem="L6Y-qP-bGd" firstAttribute="top" secondItem="JqT-mp-u6Q" secondAttribute="bottom" constant="6" id="uD9-a1-cpm"/>
                             <constraint firstItem="x9z-SQ-hJW" firstAttribute="top" secondItem="0aZ-TP-D2Q" secondAttribute="bottom" constant="6" id="yYZ-fs-oeq"/>
                             <constraint firstItem="x9z-SQ-hJW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="zEv-Tv-9wo"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activelyTrackedTrackable" destination="ORQ-uJ-mDQ" id="zTm-nx-MRV"/>
+                        <outlet property="activelyTrackedTrackableLabel" destination="ORQ-uJ-mDQ" id="zTm-nx-MRV"/>
                         <outlet property="connectionStatusLabel" destination="14o-Yq-tIx" id="JhB-Nz-a11"/>
                         <outlet property="currentAccuracyLabel" destination="5e4-1k-Rkx" id="F1H-aw-nSG"/>
                         <outlet property="currentDesiredIntervalLabel" destination="c1b-0y-nBa" id="boJ-6F-hVq"/>
@@ -193,7 +235,10 @@
                         <outlet property="desiredResolutionLabel" destination="QTW-PJ-KMI" id="Jpr-vN-vXo"/>
                         <outlet property="destinationLatitudeLabel" destination="COh-bv-V9j" id="dax-jr-oY0"/>
                         <outlet property="destinationLongitudeLabel" destination="JqT-mp-u6Q" id="mHJ-lt-vHP"/>
+                        <outlet property="distanceLabel" destination="L6Y-qP-bGd" id="pOY-qv-cd5"/>
+                        <outlet property="finishTrackingButton" destination="cRh-Cg-Sl5" id="i24-wH-d6Z"/>
                         <outlet property="horizontalAccuracyLabel" destination="EMM-bn-Mbd" id="AJP-hT-qz8"/>
+                        <outlet property="minAcceptanceDistanceTextField" destination="Auh-7x-vDe" id="tGa-ZH-QXa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -202,8 +247,14 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

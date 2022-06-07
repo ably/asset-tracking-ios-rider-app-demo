@@ -49,6 +49,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="startTrackingButton" destination="nWb-aW-FtA" id="g2w-lw-qfA"/>
                         <outlet property="trackablesTableView" destination="6q8-Qt-CoK" id="zlD-qb-cRg"/>
                     </connections>
                 </viewController>

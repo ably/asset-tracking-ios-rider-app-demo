@@ -13,7 +13,8 @@ protocol SelectTrackableDelegate: AnyObject {
 }
 
 class SelectTrackableViewController: UIViewController {
-    @IBOutlet var trackablesTableView: UITableView!
+    @IBOutlet private var startTrackingButton: UIButton!
+    @IBOutlet private var trackablesTableView: UITableView!
     
     weak var delegate: SelectTrackableDelegate?
     private let viewModel = SelectTrackableViewModel()
@@ -26,6 +27,7 @@ class SelectTrackableViewController: UIViewController {
         registerTableViewCells()
         trackablesTableView.delegate = self
         trackablesTableView.dataSource = self
+        startTrackingButton.layer.cornerRadius = 16
         super.viewDidLoad()
     }
     
