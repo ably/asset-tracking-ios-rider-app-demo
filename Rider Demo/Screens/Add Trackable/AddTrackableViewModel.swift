@@ -2,7 +2,7 @@
 //  AddTrackableViewModel.swift
 //  Rider Demo
 //
-//  Created by Jakub Jankowski on 02/06/2022.
+//  Copyright 2022 Ably Real-time Ltd (ably.com)
 //
 
 import Foundation
