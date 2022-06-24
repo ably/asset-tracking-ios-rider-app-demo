@@ -26,7 +26,7 @@ class AATService {
     let ablyAPIKey = EnvironmentHelper.ablyKey
     let mapBoxKey = EnvironmentHelper.mapboxAccessToken
 
-    var delegate: AATServiceDelegate?
+    weak var delegate: AATServiceDelegate?
     
     private(set) var desiredResolution: Resolution?
     private var publisher: Publisher?
