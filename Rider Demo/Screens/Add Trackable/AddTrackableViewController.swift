@@ -37,26 +37,13 @@ class AddTrackableViewController: UIViewController {
         
         super.viewDidLoad()
     }
-    
-    private func getResolutionConstraints() -> DefaultResolutionConstraints {
-        DefaultResolutionConstraints(resolutions: getResolutionSet(), proximityThreshold: DefaultProximity(spatial: 1.0), batteryLevelThreshold: 15.0, lowBatteryMultiplier: 5.0)
-    }
-    
-    private func getResolutionSet() -> DefaultResolutionSet {
-        let farWithoutSubscriberResolution = Resolution(accuracy: Accuracy.minimum, desiredInterval: 2000, minimumDisplacement: 100.0)
-        let farWithSubscriberResolution = Resolution(accuracy: Accuracy.balanced, desiredInterval: 1000, minimumDisplacement: 10.0)
-        let nearWithoutSubscriberResolution = Resolution(accuracy: Accuracy.balanced, desiredInterval: 1000, minimumDisplacement: 10.0)
-        let nearWithSubscriberResolution = Resolution(accuracy: Accuracy.high, desiredInterval: 500, minimumDisplacement: 1.0)
-
-        return DefaultResolutionSet(farWithoutSubscriber: farWithoutSubscriberResolution, farWithSubscriber: farWithSubscriberResolution, nearWithoutSubscriber: nearWithoutSubscriberResolution, nearWithSubscriber: nearWithSubscriberResolution)
-    }
 
     @IBAction private func addButtonTapped() {
         guard let trackableID = trackableIDTextField.text, !trackableID.isEmpty
         else { return }
 
         let destination = viewModel.getDestination(latitude: latitudeTextField.text, longitude: longitudeTextField.text)
-        let trackable = Trackable(id: trackableID, destination: destination, constraints: getResolutionConstraints())
+        let trackable = Trackable(id: trackableID, destination: destination, constraints: viewModel.getResolutionConstraints())
         delegate?.trackableAdded(trackable: trackable)
         navigationController?.popViewController(animated: true)
     }
