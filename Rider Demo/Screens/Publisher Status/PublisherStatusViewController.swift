@@ -32,6 +32,8 @@ class PublisherStatusViewController: UIViewController {
     @IBOutlet private var finishTrackingButton: UIButton!
     @IBOutlet private var minAcceptanceDistanceTextField: UITextField!
     
+    @IBOutlet private var scrollView: UIScrollView!
+    
     var viewModel: PublisherStatusViewModel?
 
     func configure(resolution: Resolution, routingProfile: RoutingProfile) {
@@ -68,6 +70,8 @@ class PublisherStatusViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         activelyTrackedTrackableLabel.text = "Actively tracked trackable: \(viewModel?.getActiveTrackable()?.id ?? "none")"
+        
+        scrollView.updateContentSize()
         super.viewDidAppear(animated)
     }
     

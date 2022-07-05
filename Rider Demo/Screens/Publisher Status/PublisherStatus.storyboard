@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-ib-cQw">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-ib-cQw">
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gre-DM-GHL" userLabel="Container View">
@@ -39,8 +39,8 @@
                                                     <action selector="addTrackableButtonTapped" destination="Y6W-OH-hqX" eventType="touchUpInside" id="2Ol-sW-2EY"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actively TrackedConnection Status: Disconnected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14o-Yq-tIx" userLabel="Connection Status Label">
-                                                <rect key="frame" x="35.5" y="51" width="303" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connection Status: Disconnected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14o-Yq-tIx" userLabel="Connection Status Label">
+                                                <rect key="frame" x="85.5" y="51" width="203" height="16"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -267,6 +267,7 @@
                         <outlet property="finishTrackingButton" destination="cRh-Cg-Sl5" id="i24-wH-d6Z"/>
                         <outlet property="horizontalAccuracyLabel" destination="EMM-bn-Mbd" id="AJP-hT-qz8"/>
                         <outlet property="minAcceptanceDistanceTextField" destination="Auh-7x-vDe" id="tGa-ZH-QXa"/>
+                        <outlet property="scrollView" destination="pd4-ib-cQw" id="CMB-hh-fF0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
