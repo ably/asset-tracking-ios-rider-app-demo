@@ -24,6 +24,7 @@ class SelectTrackableViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        title = "Select Active Trackable"
         registerTableViewCells()
         trackablesTableView.delegate = self
         trackablesTableView.dataSource = self
