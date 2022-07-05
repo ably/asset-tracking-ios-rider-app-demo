@@ -13,3 +13,9 @@ Such deliveries could be food, groceries or other packages ordered for home deli
 This app is a member of our
 [suite of **Ably Asset Tracking Demos**](https://github.com/ably/asset-tracking-demos),
 developed by Ably's SDK Team to demonstrate best practice for adopting and deploying Asset Tracking.
+
+## Known Limitations
+
+### Tracking a trackable that was added to the publisher earlier
+
+Currently you can either `Add`, or `Add & Actively Track` a trackable on the `Add Trackable` screen, which respectfully fires the  `add` and `track` methods on the Publisher object. However, if you `Add` a trackable on this screen, and then try to select it on the `Select Trackable` screen (which fires the `track` method), you'll get an error in the `track` method's completion block, and the selected trackable won't be  actively tracked. This problem is caused by the sdk issue: https://github.com/ably/ably-asset-tracking-swift/issues/308
