@@ -10,6 +10,8 @@ import CoreLocation
 import AblyAssetTrackingPublisher
 
 class SetupViewModel: NSObject {
+    
+    weak var viewController: SetupViewController!
 
     func getDestination(latitude: String?, longitude: String?) -> LocationCoordinate? {
         guard let latitude = latitude,
@@ -21,6 +23,14 @@ class SetupViewModel: NSObject {
         }
 
         return LocationCoordinate(latitude: latitudeDegrees, longitude: longitudeDegrees)
+    }
+    
+    func handleTextFieldChanged() {
+        if Int(viewController.getMinimumDisplacementText()) != nil && Int(viewController.getDesiredIntervalText()) != nil {
+            viewController.enableStartPublisherButton()
+        } else {
+            viewController.disableStartPublisherButton()
+        }
     }
 
     func getSelectedRoutingProfile(routingIndex: Int) -> RoutingProfile {

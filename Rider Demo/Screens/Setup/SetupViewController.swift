@@ -19,7 +19,9 @@ class SetupViewController: UIViewController {
     let viewModel = SetupViewModel()
 
     override func viewDidLoad() {
+        viewModel.viewController = self
         startPublisherButton.layer.cornerRadius = 16
+        disableStartPublisherButton()
         
         let segmentedControlBackgroundColor = UIColor(red: 50/255, green: 116/255, blue: 219/255, alpha: 1)
         routingProfileSegmentedControl.backgroundColor = segmentedControlBackgroundColor
@@ -33,8 +35,33 @@ class SetupViewController: UIViewController {
         
         minimumDisplacementTextField.delegate = self
         desiredIntervalTextField.delegate = self
+        
+        minimumDisplacementTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        desiredIntervalTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
 
         super.viewDidLoad()
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        viewModel.handleTextFieldChanged()
+    }
+    
+    func getMinimumDisplacementText() -> String {
+        return minimumDisplacementTextField.text ?? ""
+    }
+    
+    func getDesiredIntervalText() -> String {
+        return desiredIntervalTextField.text ?? ""
+    }
+    
+    func disableStartPublisherButton() {
+        startPublisherButton.backgroundColor = UIColor.gray
+        startPublisherButton.isEnabled = false
+    }
+    
+    func enableStartPublisherButton() {
+        startPublisherButton.isEnabled = true
+        startPublisherButton.backgroundColor = UIColor.systemRed
     }
 
     @IBAction private func startPublisherButtonPressed() {
