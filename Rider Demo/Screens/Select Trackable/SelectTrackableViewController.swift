@@ -29,6 +29,8 @@ class SelectTrackableViewController: UIViewController {
         trackablesTableView.delegate = self
         trackablesTableView.dataSource = self
         startTrackingButton.layer.cornerRadius = 16
+        disableStartTrackingButton()
+
         super.viewDidLoad()
     }
     
@@ -39,13 +41,22 @@ class SelectTrackableViewController: UIViewController {
                                 forCellReuseIdentifier: "TrackableTableViewCell")
     }
     
+    func disableStartTrackingButton() {
+        startTrackingButton.backgroundColor = UIColor.gray
+        startTrackingButton.isEnabled = false
+    }
+    
+    func enableStartTrackingButton() {
+        startTrackingButton.isEnabled = true
+        startTrackingButton.backgroundColor = UIColor.systemRed
+    }
+    
     @IBAction private func startTrackingButtonTapped() {
         guard let selectedRowIndexPath = trackablesTableView.indexPathForSelectedRow
         else { return }
         
         let selectedTrackable = viewModel.trackables[selectedRowIndexPath.row]
         delegate?.trackableSelected(trackable: selectedTrackable)
-        
         navigationController?.popViewController(animated: true)
     }
 }
@@ -53,6 +64,10 @@ class SelectTrackableViewController: UIViewController {
 extension SelectTrackableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 64
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        enableStartTrackingButton()
     }
 }
 

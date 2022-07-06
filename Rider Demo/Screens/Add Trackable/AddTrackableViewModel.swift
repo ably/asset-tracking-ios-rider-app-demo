@@ -30,7 +30,9 @@ class AddTrackableViewModel {
     }
     
     func handleTextFieldChanged() {
-        if Int(viewController.getLatitudeText()) != nil && Int(viewController.getLongitudeText()) != nil && !viewController.getTrackableID().isEmpty {
+        if (Int(viewController.getLatitudeText()) != nil || viewController.getLatitudeText().isEmpty)
+            && (Int(viewController.getLongitudeText()) != nil || viewController.getLongitudeText().isEmpty)
+            && !viewController.getTrackableID().isEmpty {
             viewController.enableButtons()
         } else {
             viewController.disableButtons()
