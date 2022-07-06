@@ -41,12 +41,12 @@ class SelectTrackableViewController: UIViewController {
                                 forCellReuseIdentifier: "TrackableTableViewCell")
     }
     
-    func disableStartTrackingButton() {
+    private func disableStartTrackingButton() {
         startTrackingButton.backgroundColor = UIColor.gray
         startTrackingButton.isEnabled = false
     }
     
-    func enableStartTrackingButton() {
+    private func enableStartTrackingButton() {
         startTrackingButton.isEnabled = true
         startTrackingButton.backgroundColor = UIColor.systemRed
     }
