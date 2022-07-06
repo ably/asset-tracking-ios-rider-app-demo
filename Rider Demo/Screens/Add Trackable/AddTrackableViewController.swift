@@ -89,7 +89,7 @@ class AddTrackableViewController: UIViewController {
         else { return }
 
         let destination = viewModel.getDestination(latitude: latitudeTextField.text, longitude: longitudeTextField.text)
-        let trackable = Trackable(id: trackableID, destination: destination)
+        let trackable = Trackable(id: trackableID, destination: destination, constraints: viewModel.getResolutionConstraints())
         delegate?.trackableAddedAndActivelyTracked(trackable: trackable)
         navigationController?.popViewController(animated: true)
     }
