@@ -35,7 +35,6 @@ class AATService {
     func startPublisher(publisherResolution: Resolution, routingProfile: RoutingProfile) {
         desiredResolution = publisherResolution
         let deviceID = UIDevice.current.identifierForVendor?.uuidString ?? "unknown device"
-        // TODO: We'll be using token auth instead
         
          publisher = try? PublisherFactory.publishers()
             .connection(ConnectionConfiguration(apiKey: ablyAPIKey, clientId: deviceID))
