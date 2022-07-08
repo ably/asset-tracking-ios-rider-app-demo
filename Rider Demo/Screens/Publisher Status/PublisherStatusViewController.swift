@@ -71,7 +71,6 @@ class PublisherStatusViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         activelyTrackedTrackableLabel.text = "Actively tracked trackable: \(viewModel?.getActiveTrackable()?.id ?? "none")"
         
-        scrollView.updateContentSize()
         super.viewDidAppear(animated)
     }
     
