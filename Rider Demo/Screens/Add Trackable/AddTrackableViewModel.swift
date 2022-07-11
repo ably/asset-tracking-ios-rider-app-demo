@@ -10,6 +10,8 @@ import CoreLocation
 import AblyAssetTrackingPublisher
 
 class AddTrackableViewModel {
+    
+    weak var viewController: AddTrackableViewController!
 
     func getDestination(latitude: String?, longitude: String?) -> LocationCoordinate? {
         guard let latitude = latitude,
@@ -25,6 +27,16 @@ class AddTrackableViewModel {
     
      func getResolutionConstraints() -> DefaultResolutionConstraints {
         DefaultResolutionConstraints(resolutions: getResolutionSet(), proximityThreshold: DefaultProximity(spatial: 1.0), batteryLevelThreshold: 15.0, lowBatteryMultiplier: 5.0)
+    }
+    
+    func handleTextFieldChanged() {
+        if (Int(viewController.getLatitudeText()) != nil || viewController.getLatitudeText().isEmpty)
+            && (Int(viewController.getLongitudeText()) != nil || viewController.getLongitudeText().isEmpty)
+            && !viewController.getTrackableID().isEmpty {
+            viewController.enableButtons()
+        } else {
+            viewController.disableButtons()
+        }
     }
     
     private func getResolutionSet() -> DefaultResolutionSet {
