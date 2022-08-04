@@ -82,11 +82,9 @@ class PublisherStatusViewModel {
         aatService.removeTrackable(trackable: activeTrackable) {[weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let success):
-                if success == true {
-                    self.viewController?.finishedTrackingResetUI()
-                    print("PublisherStatusViewModel succesfully removed a trackable: \(activeTrackable.id)")
-                }
+            case .success:
+                self.viewController?.finishedTrackingResetUI()
+                print("PublisherStatusViewModel succesfully removed a trackable: \(activeTrackable.id)")
             case .failure(let errorInfo):
                 print("PublisherStatusViewModel removeTrackable error: \(errorInfo), trackable: \(activeTrackable.id)")
                 self.viewController?.showErrorDialog(message: errorInfo.message)
