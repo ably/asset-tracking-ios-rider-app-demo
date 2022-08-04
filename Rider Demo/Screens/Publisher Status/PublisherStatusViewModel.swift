@@ -37,11 +37,29 @@ class PublisherStatusViewModel {
     }
     
     func addTrackable(trackable: Trackable) {
-        aatService.addTrackable(trackable: trackable, completion: {_ in})
+        aatService.addTrackable(trackable: trackable) {[weak self] result in
+            switch result {
+            case .success:
+                print("PublisherStatusViewModel - succesfully added a trackable")
+            case .failure(let errorInfo):
+                self?.viewController?.showErrorDialog(message: errorInfo.message)
+                print("PublisherStatusViewModel addTrackable error: \(errorInfo), trackable: \(trackable.id)")
+
+            }
+        }
     }
     
     func selectTrackable(trackable: Trackable, completion: @escaping ResultHandler<Void>) {
-        aatService.trackTrackable(trackable: trackable, completion: completion)
+        aatService.trackTrackable(trackable: trackable) {[weak self] result in
+            switch result {
+            case .success:
+                print("PublisherStatusViewModel - succesfully tracked a trackable")
+            case .failure(let errorInfo):
+                self?.viewController?.showErrorDialog(message: errorInfo.message)
+                print("PublisherStatusViewModel selectTrackable error: \(errorInfo), trackable: \(trackable.id)")
+            }
+            completion(result)
+        }
     }
     
     func getActiveTrackable() -> Trackable? {
@@ -63,15 +81,15 @@ class PublisherStatusViewModel {
         guard let activeTrackable = getActiveTrackable() else { return }
         aatService.removeTrackable(trackable: activeTrackable) {[weak self] result in
             guard let self = self else { return }
-            
             switch result {
             case .success(let success):
-                if success {
+                if success == true {
                     self.viewController?.finishedTrackingResetUI()
+                    print("PublisherStatusViewModel succesfully removed a trackable: \(activeTrackable.id)")
                 }
             case .failure(let errorInfo):
+                print("PublisherStatusViewModel removeTrackable error: \(errorInfo), trackable: \(activeTrackable.id)")
                 self.viewController?.showErrorDialog(message: errorInfo.message)
-                print("PublisherStatusViewModel handleFinishTracking error: \(errorInfo)")
             }
         }
     }
@@ -89,7 +107,7 @@ class PublisherStatusViewModel {
 extension PublisherStatusViewModel: AATServiceDelegate {
     func publisher(publisher: Publisher, didFailWithError error: ErrorInformation) {
         viewController?.showErrorDialog(message: error.message)
-        print("didFailWithError: \(error)")
+        print("PublisherStatusViewModel didFailWithError: \(error)")
     }
     
     func publisher(publisher: Publisher, didUpdateEnhancedLocation location: EnhancedLocationUpdate) {
@@ -100,7 +118,7 @@ extension PublisherStatusViewModel: AATServiceDelegate {
         determineDistanceToDestination(currentLocation: coreLocation)
         
         viewController?.updateCurrentLocation(latitude: String(locationCoordinates.latitude), longitude: String(locationCoordinates.longitude), horizontalAccuracy: String(Int(horizontalAccuracy)))
-        print("didUpdateEnhancedLocation: \(location.location.coordinate)")
+        print("PublisherStatusViewModel didUpdateEnhancedLocation: \(location.location.coordinate)")
     }
 
     func publisher(publisher: Publisher, didChangeConnectionState state: ConnectionState, forTrackable trackable: Trackable) {
@@ -108,11 +126,11 @@ extension PublisherStatusViewModel: AATServiceDelegate {
         if activeTrackable?.id == trackable.id {
             viewController?.updateConnectionStatus(connectionState: state)
         }
-        print("didChangeConnectionState: \(state), \nforTrackable: \(trackable.id)")
+        print("PublisherStatusViewModel didChangeConnectionState: \(state), forTrackable: \(trackable.id)")
     }
 
     func publisher(publisher: Publisher, didUpdateResolution resolution: Resolution) {
         viewController?.updateResolutionLabels(resolution: resolution)
-        print("didUpdateResolution: \(resolution)")
+        print("PublisherStatusViewModel didUpdateResolution: \(resolution)")
     }
 }

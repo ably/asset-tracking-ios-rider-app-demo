@@ -61,8 +61,7 @@ class AATService {
             switch result {
             case .success:
                 self?.trackables.append(trackable)
-            case .failure(let errorInfo):
-                print("AATService addTrackable error: \(errorInfo), trackable: \(trackable.id)")
+            default: break
             }
             completion(result)
         })
@@ -73,8 +72,7 @@ class AATService {
             switch result {
             case .success:
                 self?.trackables.append(trackable)
-            case .failure(let errorInfo):
-                print("AATService trackTrackable error: \(errorInfo), trackable: \(trackable.id)")
+            default: break
             }
             completion(result)
         })
@@ -82,14 +80,13 @@ class AATService {
     
     func removeTrackable(trackable: Trackable, completion: @escaping ResultHandler<Bool>) {
         publisher?.remove(trackable: trackable, completion: {[weak self] result in
+            
             switch result {
             case .success(let success):
                 if success == true {
                     self?.trackables.removeAll { $0.id == trackable.id }
-                    print("")
                 }
-            case .failure(let errorInfo):
-                print("AATService removeTrackable error: \(errorInfo), trackable: \(trackable.id)")
+            default: break
             }
             completion(result)
         })
@@ -112,11 +109,9 @@ extension AATService: PublisherDelegate {
 
     func publisher(sender: Publisher, didChangeConnectionState state: ConnectionState, forTrackable trackable: Trackable) {
         delegate?.publisher(publisher: sender, didChangeConnectionState: state, forTrackable: trackable)
-        print("aatService didChangeConnectionState: \(state), forTrackable: \(trackable.id)")
     }
 
     func publisher(sender: Publisher, didUpdateResolution resolution: Resolution) {
         delegate?.publisher(publisher: sender, didUpdateResolution: resolution)
-        print("aatService didUpdateResolution: \(resolution)")
     }
 }
