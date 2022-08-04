@@ -62,12 +62,15 @@ class PublisherStatusViewModel {
     func handleFinishTracking() {
         guard let activeTrackable = getActiveTrackable() else { return }
         aatService.removeTrackable(trackable: activeTrackable) {[weak self] result in
+            guard let self = self else { return }
+            
             switch result {
             case .success(let success):
                 if success {
-                    self?.viewController?.finishedTrackingResetUI()
+                    self.viewController?.finishedTrackingResetUI()
                 }
             case .failure(let errorInfo):
+                self.viewController?.showErrorDialog(message: errorInfo.message)
                 print("PublisherStatusViewModel handleFinishTracking error: \(errorInfo)")
             }
         }
@@ -85,6 +88,7 @@ class PublisherStatusViewModel {
 
 extension PublisherStatusViewModel: AATServiceDelegate {
     func publisher(publisher: Publisher, didFailWithError error: ErrorInformation) {
+        viewController?.showErrorDialog(message: error.message)
         print("didFailWithError: \(error)")
     }
     

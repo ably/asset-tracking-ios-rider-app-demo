@@ -120,6 +120,13 @@ class PublisherStatusViewController: UIViewController {
         finishTrackingButton.backgroundColor = UIColor.gray
     }
     
+    func showErrorDialog(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        
+        present(alertController, animated: true)
+    }
+    
     @IBAction private func selectTrackableButtonTapped() {
         let storyboard = UIStoryboard(name: "SelectTrackable", bundle: nil)
         guard let selectTrackableViewController = storyboard.instantiateViewController(withIdentifier: "SelectTrackable") as? SelectTrackableViewController
