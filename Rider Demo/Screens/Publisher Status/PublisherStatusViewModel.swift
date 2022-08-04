@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 import AblyAssetTrackingPublisher
 
-class PublisherStatusViewModel {
+class PublisherStatusViewModel: NSObject {
     
     weak var viewController: PublisherStatusViewController?
     let locationManager = CLLocationManager()
@@ -27,7 +27,8 @@ class PublisherStatusViewModel {
     }
 
     func viewDidLoad() {
-        locationManager.requestAlwaysAuthorization()
+        locationManager.delegate = self
+        handlePermissionsRequests()
         aatService.delegate = self
         aatService.startPublisher(publisherResolution: publisherResolution, routingProfile: routingProfile)
     }
@@ -81,6 +82,27 @@ class PublisherStatusViewModel {
         let distance = currentLocation.distance(from: destination)
         viewController?.updateDistance(distance: Int(distance))
     }
+    
+    private func handlePermissionsRequests() {
+        switch locationManager.authorizationStatus {
+        case .authorizedAlways:
+            print("Location permission has been granted already")
+            locationManager.allowsBackgroundLocationUpdates = true
+        case .notDetermined:
+            print("Location permission not determined")
+            locationManager.requestAlwaysAuthorization()
+        case .restricted, .denied:
+            print("Location permission restricted/denied")
+            let deniedMessage = "In order to share your location with your customers you need to allow this app access to your location in the Settings."
+            viewController?.showLocationPermissionSettingsDialog(message: deniedMessage)
+        case .authorizedWhenInUse:
+            print("location permission when in use")
+            let whenInUseMessage = "In order to share your location with your customers even if the app is in the background, you need to allow this app to always access your location in the Settings"
+            viewController?.showLocationPermissionSettingsDialog(message: whenInUseMessage)
+        @unknown default:
+            locationManager.requestAlwaysAuthorization()
+        }
+    }
 }
 
 extension PublisherStatusViewModel: AATServiceDelegate {
@@ -110,5 +132,11 @@ extension PublisherStatusViewModel: AATServiceDelegate {
     func publisher(publisher: Publisher, didUpdateResolution resolution: Resolution) {
         viewController?.updateResolutionLabels(resolution: resolution)
         print("didUpdateResolution: \(resolution)")
+    }
+}
+
+extension PublisherStatusViewModel: CLLocationManagerDelegate {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        handlePermissionsRequests()
     }
 }
