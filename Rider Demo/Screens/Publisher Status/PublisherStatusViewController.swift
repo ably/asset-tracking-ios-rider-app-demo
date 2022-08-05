@@ -126,7 +126,10 @@ class PublisherStatusViewController: UIViewController {
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
         }))
         alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        
+    }
+    func showErrorDialog(message: String) {
+        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         present(alertController, animated: true)
     }
     

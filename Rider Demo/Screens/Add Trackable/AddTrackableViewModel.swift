@@ -26,7 +26,7 @@ class AddTrackableViewModel {
     }
     
      func getResolutionConstraints() -> DefaultResolutionConstraints {
-        DefaultResolutionConstraints(resolutions: getResolutionSet(), proximityThreshold: DefaultProximity(spatial: 1.0), batteryLevelThreshold: 15.0, lowBatteryMultiplier: 5.0)
+        DefaultResolutionConstraints(resolutions: getResolutionSet(), proximityThreshold: DefaultProximity(spatial: 1000.0), batteryLevelThreshold: 50.0, lowBatteryMultiplier: 5.0)
     }
     
     func handleTextFieldChanged() {
