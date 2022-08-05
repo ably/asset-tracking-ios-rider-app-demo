@@ -120,10 +120,16 @@ class PublisherStatusViewController: UIViewController {
         finishTrackingButton.backgroundColor = UIColor.gray
     }
     
+    func showLocationPermissionSettingsDialog(message: String) {
+        let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Settings", style: .default, handler: { _ in
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    }
     func showErrorDialog(message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-        
         present(alertController, animated: true)
     }
     
