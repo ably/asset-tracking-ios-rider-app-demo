@@ -27,6 +27,10 @@
 		0C7A112E2846173700ABF87E /* PublisherStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7A112D2846173700ABF87E /* PublisherStatusViewModel.swift */; };
 		0C80E7B12875C0E8000C9D92 /* SecretsExample.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C80E7B02875C0E8000C9D92 /* SecretsExample.plist */; };
 		0CA492682847761D002BC6A9 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0CA492672847761D002BC6A9 /* Secrets.plist */; };
+		0CF9C7AE28A0FFD200E93FAD /* LocationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF9C7AD28A0FFD100E93FAD /* LocationLogger.swift */; };
+		0CF9C7B228A253DA00E93FAD /* DateFormatter+getFormattedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF9C7B128A253DA00E93FAD /* DateFormatter+getFormattedDate.swift */; };
+		0CF9C7B428A4FD3700E93FAD /* String+Append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF9C7B328A4FD3600E93FAD /* String+Append.swift */; };
+		0CF9C7B628A4FD7000E93FAD /* Date+Append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF9C7B528A4FD7000E93FAD /* Date+Append.swift */; };
 		0CFADF2128479F3A009D5572 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 0CFADF2028479F39009D5572 /* .swiftlint.yml */; };
 		0CFADF232848B836009D5572 /* AddTrackableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFADF222848B836009D5572 /* AddTrackableViewController.swift */; };
 		0CFADF262848B853009D5572 /* AddTrackable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CFADF252848B853009D5572 /* AddTrackable.storyboard */; };
@@ -55,6 +59,10 @@
 		0C7A112D2846173700ABF87E /* PublisherStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublisherStatusViewModel.swift; sourceTree = "<group>"; };
 		0C80E7B02875C0E8000C9D92 /* SecretsExample.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SecretsExample.plist; sourceTree = "<group>"; };
 		0CA492672847761D002BC6A9 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		0CF9C7AD28A0FFD100E93FAD /* LocationLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLogger.swift; sourceTree = "<group>"; };
+		0CF9C7B128A253DA00E93FAD /* DateFormatter+getFormattedDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+getFormattedDate.swift"; sourceTree = "<group>"; };
+		0CF9C7B328A4FD3600E93FAD /* String+Append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Append.swift"; sourceTree = "<group>"; };
+		0CF9C7B528A4FD7000E93FAD /* Date+Append.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Append.swift"; sourceTree = "<group>"; };
 		0CFADF2028479F39009D5572 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		0CFADF222848B836009D5572 /* AddTrackableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTrackableViewController.swift; sourceTree = "<group>"; };
 		0CFADF252848B853009D5572 /* AddTrackable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTrackable.storyboard; sourceTree = "<group>"; };
@@ -92,6 +100,8 @@
 		0C10D0E82844D81100A9E8EC /* Rider Demo */ = {
 			isa = PBXGroup;
 			children = (
+				0CF9C7B028A253BF00E93FAD /* Extensions */,
+				0CF9C7AF28A0FFEA00E93FAD /* Log */,
 				0C10D1062844E07F00A9E8EC /* Services */,
 				0C10D1022844DD4900A9E8EC /* Screens */,
 				0C10D0E92844D81100A9E8EC /* AppDelegate.swift */,
@@ -164,6 +174,24 @@
 				0C7A112D2846173700ABF87E /* PublisherStatusViewModel.swift */,
 			);
 			path = "Publisher Status";
+			sourceTree = "<group>";
+		};
+		0CF9C7AF28A0FFEA00E93FAD /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				0CF9C7AD28A0FFD100E93FAD /* LocationLogger.swift */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		0CF9C7B028A253BF00E93FAD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0CF9C7B128A253DA00E93FAD /* DateFormatter+getFormattedDate.swift */,
+				0CF9C7B328A4FD3600E93FAD /* String+Append.swift */,
+				0CF9C7B528A4FD7000E93FAD /* Date+Append.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0CFADF242848B83E009D5572 /* Add Trackable */ = {
@@ -290,8 +318,12 @@
 				0C10D0EA2844D81100A9E8EC /* AppDelegate.swift in Sources */,
 				0C10D1082844E09100A9E8EC /* AATService.swift in Sources */,
 				0C10D0EC2844D81100A9E8EC /* SceneDelegate.swift in Sources */,
+				0CF9C7B428A4FD3700E93FAD /* String+Append.swift in Sources */,
+				0CF9C7B628A4FD7000E93FAD /* Date+Append.swift in Sources */,
 				0CFADF282848B863009D5572 /* AddTrackableViewModel.swift in Sources */,
 				0C10D1052844DE2E00A9E8EC /* SetupViewModel.swift in Sources */,
+				0CF9C7B228A253DA00E93FAD /* DateFormatter+getFormattedDate.swift in Sources */,
+				0CF9C7AE28A0FFD200E93FAD /* LocationLogger.swift in Sources */,
 				0C7A112E2846173700ABF87E /* PublisherStatusViewModel.swift in Sources */,
 				0CFADF232848B836009D5572 /* AddTrackableViewController.swift in Sources */,
 				0C510C572848D2C3008F0E5C /* SelectTrackableViewController.swift in Sources */,

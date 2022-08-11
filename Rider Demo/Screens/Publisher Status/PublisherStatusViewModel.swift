@@ -18,6 +18,8 @@ class PublisherStatusViewModel: NSObject {
     let routingProfile: RoutingProfile
     let aatService = AATService.sharedInstance
     
+    let locationLogger = LocationLogger()
+    
     var minAcceptanceDistance = 150
 
     init(publisherResolution: Resolution, routingProfile: RoutingProfile, viewController: PublisherStatusViewController) {
@@ -138,6 +140,11 @@ extension PublisherStatusViewModel: AATServiceDelegate {
         determineDistanceToDestination(currentLocation: coreLocation)
         
         viewController?.updateCurrentLocation(latitude: String(locationCoordinates.latitude), longitude: String(locationCoordinates.longitude), horizontalAccuracy: String(Int(horizontalAccuracy)))
+        
+        locationLogger.logLocationUpdate(locationUpdate: location) { result in
+            print(result)
+        }
+        
         print("PublisherStatusViewModel didUpdateEnhancedLocation: \(location.location.coordinate)")
     }
 
